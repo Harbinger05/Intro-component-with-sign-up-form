@@ -12,13 +12,12 @@ form.addEventListener('submit', (e) => {
                 err.style.display = 'block'
                 input.style.borderColor = 'hsl(0, 100%, 74%)'
             })
-            if(emailInput === '') {
-                emailInput.value = 'email@emaple.com'
-            }
         }
         else {
             err.forEach((err) => {
                 err.style.display = 'none'
+                input.style.borderColor = 'hsl(260, 2%, 69%)'
+                input.value = ''
             })
         }
     })

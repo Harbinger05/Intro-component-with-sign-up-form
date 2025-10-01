@@ -2,6 +2,7 @@ const form = document.querySelector('form')
 const err = document.querySelectorAll('.error')
 const input = document.querySelectorAll('input')
 const emailInput = document.querySelector('#email')
+const errorIcon = document.querySelectorAll('img')
 
 
 form.addEventListener('submit', (e) => {
@@ -15,6 +16,10 @@ form.addEventListener('submit', (e) => {
                 input.placeholder = ''
                 emailInput.placeholder = 'email@example.com'
                 emailInput.classList.add('active')
+
+                errorIcon.forEach((errIcon) => {
+                    errIcon.style.opacity = 1
+                })
             })
         }
         else {
@@ -28,7 +33,11 @@ form.addEventListener('submit', (e) => {
                 if (input.id === 'password') input.placeholder = 'Password';
 
                 emailInput.classList.remove('active')
-                
+
+                errorIcon.forEach((errIcon) => {
+                    errIcon.style.opacity = 0
+                })
+
                 input.value = ''
             })
         }
